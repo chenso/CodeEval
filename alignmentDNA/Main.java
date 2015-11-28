@@ -1,3 +1,14 @@
+/**
+ * Finds comparison score for two DNA sequences based on the following rules
+ * 
+ * Match: +3
+ * Mismatch: -3
+ * Indel start: -8
+ * Indel extension: -1
+ * 
+ * @author Songge Chen
+ * 
+ */
 package alignmentDNA;
 import java.io.*;
 import java.util.HashMap;
@@ -66,7 +77,7 @@ public class Main {
         File file = new File(args[0]);
         long a =file.length();
         BufferedReader buffer = new BufferedReader(new FileReader(file));
-        String line = "GCATGCT | GATTACA";
+        String line;
         while ((line = buffer.readLine()) != null) {
         	
         	cache.clear();
